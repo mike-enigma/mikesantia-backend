@@ -16,7 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping()
 @Api(value = "CollectStatus Api", description = "CollectStatus Api")
-public class CollectStatusRepository {
+public class CollectStatusController {
     @Autowired
     CollectStatusService collectStatusService;
     private CollectStatusResponse collectStatusResponse =null;

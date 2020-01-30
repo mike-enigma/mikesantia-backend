@@ -14,6 +14,7 @@ import java.util.Objects;
 @Entity
 @Table(name = ConstantaLoan.ENTITY_LOAN)
 public class Loan {
+    @Id
     private String loanId;
     private Calendar openDate;
     private Integer tenor;
