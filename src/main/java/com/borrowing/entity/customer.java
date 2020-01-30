@@ -1,17 +1,21 @@
 package com.borrowing.entity;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 import java.util.Objects;
 
-public class customer extends BaseEntity {
+@Entity
+@Table(name = "mst_customer")
+public class Customer extends BaseEntity {
     @Id
     private String cif;
     private String firstName;
     private String lastName;
     private Date birthDate;
 
-    public customer(Integer id, java.sql.Date createdAt, java.sql.Date updatedAt, String cif, String firstName, String lastName, Date birthDate) {
+    public Customer(Integer id, java.sql.Date createdAt, java.sql.Date updatedAt, String cif, String firstName, String lastName, Date birthDate) {
         super(id, createdAt, updatedAt);
         this.cif = cif;
         this.firstName = firstName;
@@ -55,7 +59,7 @@ public class customer extends BaseEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        customer customer = (customer) o;
+        Customer customer = (Customer) o;
         return Objects.equals(cif, customer.cif) &&
                 Objects.equals(firstName, customer.firstName) &&
                 Objects.equals(lastName, customer.lastName) &&
